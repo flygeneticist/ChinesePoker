@@ -28,13 +28,6 @@ public class Hand {
     }
 
     /**
-     * Clear all subhands held by a player.
-     */
-    public void clear() {
-
-    }
-
-    /**
      * Return the number of cards in the subhand.
      */
     public int getCardCount(Card[] subhand) {

@@ -15,6 +15,13 @@ public class Player {
 	}
 
 	/**
+    * Clear all subhands held by a player.
+    */
+    public void clear() {
+        hand = new Hand();
+    }
+
+	/**
 	* Quick print out of the player's stats in one method
 	*/
 	public void playerStats() {

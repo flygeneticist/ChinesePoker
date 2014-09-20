@@ -28,14 +28,17 @@ public class ChinesePoker {
 		// start the game
 		boolean run = true;
 		while (run) {
-			System.out.println("Starting Round....");
-			Deck d = new Deck(); // create a new deck
-
+			// check if human player is bankrupt
 			if (player_a[0].getBankroll() <= 0) { // the game ends
 				System.out.println("YOU LOOSE!");
 				run = false;
 			}
 			else { // play the round
+				System.out.println("Starting Round....");
+
+				// create and setup a new deck
+				Deck d = new Deck(); 
+				d.shuffle();
 
 				// deal out the starting 13 cards to each of the players
 				// players all set their subhands and commit
