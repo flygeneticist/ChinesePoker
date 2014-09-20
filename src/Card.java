@@ -1,10 +1,4 @@
 
-/**
- * An object of type Card represents a playing card from a
- * standard Poker deck, including Jokers.  The card has a suit and 
- * one of the 13 values: ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, jack, queen, 
- * or king.  Note that "ace" is considered to be the smallest value. 
- */
 public class Card {
 		
 	private int value; // ranked from Ace(1) to King (13)
@@ -13,14 +7,16 @@ public class Card {
 	private String back = "BACK PICTURE URL GOES HERE!"; // back card face picture
 	private boolean isCovered = true; // default the card to be covered
 	
-	public final static int SPADES = 0;   // Codes for the 4 suits, plus Joker.
+	// Codes for the 4 suits
+	public final static int SPADES = 0;
 	public final static int HEARTS = 1;
 	public final static int DIAMONDS = 2;
 	public final static int CLUBS = 3;
- 
-	public final static int ACE = 1;      // Codes for the non-numeric cards.
-	public final static int JACK = 11;    //   Cards 2 through 10 have their 
-	public final static int QUEEN = 12;   //   numerical values for their codes.
+	
+	// Codes for the non-numeric cards (2-10 have their numerical values)
+	public final static int ACE = 1;      
+	public final static int JACK = 11;    
+	public final static int QUEEN = 12; 
 	public final static int KING = 13;
 	   
 	/**
@@ -32,18 +28,8 @@ public class Card {
 		front = "./" + v + s + ".jpg";
 	}
  
-	/**
-	 * Constructor. Empty constructor for array initialization.
-	 */
-	public Card() {
-		value = 0;
-		suit = 4;
-	}
-	
    /**
     * Returns the suit of this card.
-    * @returns the suit, which is one of the constants Card.SPADES, 
-    * Card.HEARTS, Card.DIAMONDS, Card.CLUBS, or Card.JOKER
     */
    public int getSuit() {
       return suit;
@@ -51,8 +37,6 @@ public class Card {
    
    /**
     * Returns the value of this card.
-    * @return the value, which is one of the numbers 1 through 13, inclusive for
-    * a regular card, and which can be any value for a Joker.
     */
    public int getValue() {
       return value;
@@ -60,8 +44,6 @@ public class Card {
    
    /**
     * Returns a String representation of the card's suit.
-    * @return one of the strings "Spades", "Hearts", "Diamonds", "Clubs"
-    * or "Joker".
     */
    public String getSuitString() {
       switch ( suit ) {
@@ -75,9 +57,6 @@ public class Card {
    
    /**
     * Returns a String representation of the card's value.
-    * @return for a regular card, one of the strings "Ace", "2",
-    * "3", ..., "10", "Jack", "Queen", or "King".  For a Joker, the 
-    * string is always numerical.
     */
    public String getValueString() {
        switch ( value ) {
@@ -98,9 +77,7 @@ public class Card {
    }
  
    /**
-    * Returns a string representation of this card, including both
-    * its suit and its value. Sample return values are: "Queen of Hearts", 
-    * "10 of Diamonds", "Ace of Spades"
+    * Returns a string representation of this card, including both value and suit.
     */
    public String toString() {
          return getValueString() + " of " + getSuitString();

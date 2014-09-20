@@ -5,18 +5,19 @@ public class Hand {
      * Constructor. Create a Hand object that is initially empty.
      */
     public Hand() {
-    	Card[] pool = Card[13];
-    	Card[] top = Card[3];
-    	Card[] middle = Card[5];
-    	Card[] bottom = Card[5];
+    	// "Sub-hands" that cards may exist in at any given point during a round
+        Card[] pool = new Card[13]; // initial dealing of 13 cards from the deck
+        Card[] top = new Card[3]; // best 3 
+        Card[] middle = new Card[5]; // worst 5
+        Card[] bottom = new Card[5]; // best 5
     }
 
     /**
      * Add the card c to the hand. c should be non-null.
-     * sub-hand should not be full.
+     * Sub-hand should not be full. 
      */
-    public void addCard(Card c, Card[] subhand) {
-    	
+    public void addCard(Card c, Card[] subhand) { 
+        
     }
 
     /**
@@ -24,6 +25,13 @@ public class Hand {
      */
     public void removeCard(Card c, Card[] subhand) {
     	
+    }
+
+    /**
+     * Clear all subhands held by a player.
+     */
+    public void clear() {
+
     }
 
     /**
