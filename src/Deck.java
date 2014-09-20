@@ -31,7 +31,7 @@ public class Deck {
      * Deals one card from the deck and returns it.
      */
 	public Card dealCard() {
-		Card topCard = this.deck[0];
+		Card topCard = this.deck[0]; // select top card from the deck
         // remove the top card from the deck
 		return topCard;
 	}

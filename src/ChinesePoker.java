@@ -1,17 +1,46 @@
+import java.util.Scanner;
 
 public class ChinesePoker {
 	// this is the game enigine
 	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
 		System.out.println("Starting Game....");
+		
+		// gather information needed to build a player and set game settings
 		System.out.println("Setup Players and Bidding....");
-		Player you = new Player("Kevin", 1000, 10);
+		System.out.println("Enter your name.");
+		String n = in.nextLine();
+		System.out.println("Enter starting bankroll to the nearest dollar.");
+		Integer p = in.nextInt();
+		System.out.println("Enter bid amount per hand to the nearest dollar.");
+		Integer b = in.nextInt();
+		System.out.println("Enter the number of AI playing (1-3).");
+		Integer ai = in.nextInt();
+		
+		Player[] player_a = new Player[ai]; // player array to hold ALL player objects
+		player_a[0] = new Player(n, p, b); // create the human player, occupies 0 slot.
+		String[] ai_names = { "Joan of Arc", "Jimmy the Tulip", "Bob the Builder" }; // default AI names
+		// create the AI players
+		while (ai < 0) {
+			player_a[ai] = new Player(ai_names[ai-1], p, b); // create a new ai player
+		}
 
+		// start the game
 		boolean run = true;
 		while (run) {
-			System.out.println("Starting Game....");
-			if (you.getBankroll() <= 0) {
+			System.out.println("Starting Round....");
+			Deck d = new Deck(); // create a new deck
+
+			if (player_a[0].getBankroll() <= 0) { // the game ends
 				System.out.println("YOU LOOSE!");
 				run = false;
+			}
+			else { // play the round
+
+				// deal out the starting 13 cards to each of the players
+				// players all set their subhands and commit
+				// compare the hands amongst the players
+				// exchange winnings/losses
 			}
 		}
 	}
