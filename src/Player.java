@@ -5,7 +5,7 @@ public class Player {
 	private String name;
 	private int bankroll;
 	private int bid;
-	private Hand hand;
+	public Hand hand;
 	
 	public Player(String n, int bnk, int bd) {
 		name = name;
@@ -21,18 +21,9 @@ public class Player {
         hand = new Hand();
     }
 
-	/**
-	* Quick print out of the player's stats in one method
-	*/
-	public void playerStats() {
-		System.out.println("Name: "  + name);
-		System.out.println("bankroll: "  + bankroll);
-		System.out.println("Bid: "  + bid);
-	}
-
 	// return hand object
-	public Hand getHand() {
-		return hand;
+	public Card[] getHand(String subhand) {
+		return hand.getSubhand(subhand);
 	}
 
 	// return bid value for a player

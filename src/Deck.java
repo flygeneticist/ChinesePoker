@@ -38,8 +38,8 @@ public class Deck {
 	
 	// Deals one card from the deck and returns it.
 	public Card dealCard() {
-		Card topCard = this.deck[current_card]; // select current top card from the deck
+        Card topCard = this.deck[current_card]; // select current top card from the deck
         current_card += 1; // "remove" top card by moving the pointer +1
-		return topCard;
+        return topCard; 
 	}
 }

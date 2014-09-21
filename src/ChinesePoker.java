@@ -41,6 +41,13 @@ public class ChinesePoker {
 				d.shuffle();
 
 				// deal out the starting 13 cards to each of the players
+				for (int c = 0; c < 13; c++) {
+					for (int h = 0; h < player_a.length; h++) {
+						player_a[h].hand.getSubhand("pool")[c] = d.dealCard();
+					}
+				}
+				
+				run = false;
 				// players all set their subhands and commit
 				// compare the hands amongst the players
 				// exchange winnings/losses
